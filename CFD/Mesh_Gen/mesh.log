@@ -1,0 +1,21 @@
+
+
+  <***>   HEXPRESS/Hybrid 7.2  -  Mar 25 2018   <***> 
+
+reading file /home/vikramaditya/PycharmProjects/Full-CFD/CFD/Mesh_Gen/mesh.conf
+
+*******************************************************************
+.conf file reading
+
+CellFactory: appending ../Input_Files/car.x_t to geometry
+CellFactory: appending ../Input_Files/bndbox.x_t to geometry
+CellFactory: appending ../Input_Files/refbox.x_t to geometry
+CellFactory: mesh file named mesh.hex will be generated
+CellFactory: Using binary file version 11
+CellFactory: baseH 0.5
+CellFactory: Geometry defined by startpoint 80 10 10
+Create selections from
+*
+with options ALLEDGES and SPLIT with angle 40 and prefix edge
+CellFactory: local refinement definition car* 5 5
+CellFactory: additional local refinement definition refbox* 3 3 1 
