@@ -1,0 +1,123 @@
+<!--
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #DCDCDC;
+}
+.topleft {
+	background-image: url(Images/topleft.gif);
+}
+.top {
+	background-image: url(Images/top.gif);
+}
+.topright {
+	background-image: url(Images/topright.gif);
+}
+.left {
+	background-image: url(Images/left.gif);
+}
+.right {
+	background-image: url(Images/right.gif);
+}
+.middle {
+	background-color: #FFFFFF;
+	font-size: 12px;
+}
+.bottom {
+	background-color: #262626;
+}
+.menuleft {
+	background-image: url(Images/menuleft.gif);
+}
+.menumiddle {
+	background-image: url(Images/menumiddle.gif);
+}
+.menuright {
+	background-image: url(Images/menuright.gif);
+}
+.infobarleft {
+	background-image: url(Images/infobarleft.gif);
+}
+.rightinfobar {
+	background-image: url(Images/rightinfobar.gif);
+}
+.infobarright {
+	background-image: url(Images/infobarright.gif);
+}
+.leftinfobar {
+	background-image: url(Images/leftinfobar.gif);
+}
+.infobar {
+	background-image: url(Images/infobar.gif);
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	color: #5B767E;
+}
+.tablebottomborder {
+	border-bottom-width: 1pt;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-bottom-color: #000000;
+}
+a {
+	color: #475B60;
+	text-decoration: underline;
+}
+.description {
+	margin-left: 10pt;
+	margin-top: 5pt;
+        width: 70%; 
+	text-align: justify;
+}
+.imagetable {
+	border-style: solid;
+	border-color: #7D9EA6;
+	border-width: 1pt;
+	background-color: #D1E0E4;
+	margin-left: 20pt;
+}
+.imagelink {
+	border-style: solid;
+	border-color: #000000;
+	border-width: 1pt;
+	margin: 5pt;
+}
+.content {
+	margin-top: 4pt;
+	margin-left: 8pt;
+}
+.boldfont {
+	font-weight: bold;
+}
+.simpletable {
+    border-style: solid;
+    border-width: 1pt;
+}
+.highlight1 {
+    color: #862F2B;
+
+}
+.highlight2 {
+    color: #3F71B5;
+
+}
+.highlight3 {
+    color: #32862B;
+ 
+}
+h1 {
+    font-size: large;
+}
+h2 {
+    font-size: small;
+}
+.code {
+	border-style: solid;
+	border-color: #7D9EA6;
+	border-width: 1pt;
+	background-color: #D1E0E4;
+	margin-left: 20pt;
+	font-style: italic;
+}
+-->

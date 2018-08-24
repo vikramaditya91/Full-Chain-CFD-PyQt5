@@ -108,25 +108,17 @@ class App(QWidget):
         self.text_Bad = u'\u2717'
         self.text_Good = u'\u2713'
 
-
-
-
-
-
-
     def paintEvent(self, e):
         qp = QPainter()
         qp.begin(self)
         self.drawLines(qp)
         qp.end()
-        currentFrame = self.movie.currentPixmap()
-        frameRect = currentFrame.rect()
-        frameRect.moveCenter(self.rect().center())
-        if frameRect.intersects(e.rect()):# and self.meshRunning == True:
-            painter = QPainter(self)
-            painter.drawPixmap(frameRect.left(), frameRect.top(), currentFrame)
-
-
+        #currentFrame = self.movie.currentPixmap()
+        #frameRect = currentFrame.rect()
+        #frameRect.moveCenter(self.rect().center())
+        #if frameRect.intersects(e.rect()):# and self.meshRunning == True:
+        #    painter = QPainter(self)
+        #    painter.drawPixmap(frameRect.left(), frameRect.top(), currentFrame)
 
     def drawLines(self, qp):
         pen = QPen(Qt.black, 2, Qt.SolidLine)
@@ -144,13 +136,19 @@ class App(QWidget):
         self.geometryCheckText = self.display_text(self, self.text_geometryTitle + self.text_Bad, self.vis_before_title1_x,
                                                    self.vis_half_y, LargeFont, LargeFontSize)
 
-        self.carInput = self.draw_input_box(self.vis_geoName_locs, self.vis_geo_heightLevel1, 1, car_file_name, self.test_carName, self.carColor)
+        self.carText = self.display_textWithDrop(self, self.test_carName ,
+                                                   self.vis_geoName_locs,
+                                                   self.vis_geo_heightLevel1, MediumFont, MediumFontSize)
+
+        #self.carInput = self.draw_input_box(self.vis_geoName_locs, self.vis_geo_heightLevel1, 1, car_file_name, self.test_carName, self.carColor)
         self.refBoxInput = self.draw_input_box(self.vis_geoName_locs, self.vis_geo_heightLevel2, 2, refbox_file_name, self.text_refinementBoxName, self.refBoxColor)
         self.bndBoxInput = self.draw_input_box(self.vis_geoName_locs, self.vis_geo_heightLevel3, 3, bndbox_file_name, self.text_boundingBoxName, self.bndBoxColor)
 
         # Check geometry button
         self.QPushButtonWithExtraFeatures(self, self.text_geometryCheckButton , self.text_geometryCheckButtonTooltip ,
                                           self.vis_pushButtonWidth, self.vis_pushButtonHeight, self.vis_geometry_button_x , self.vis_geometry_button_y  ).clicked.connect(self.on_geo_check_click)
+
+        self.update()
 
     @pyqtSlot()
     def on_geo_check_click(self):
@@ -159,12 +157,13 @@ class App(QWidget):
         self.refBoxInput.setStyleSheet("background-color: " + color_return(refbox_file_name) + ";")
         self.bndBoxInput.setStyleSheet("background-color: " + color_return(bndbox_file_name) + ";")
 
+        #self.carInput.
+        print('In geometry check click')
         if color_return(car_file_name) == greenColor and color_return(refbox_file_name) == greenColor and color_return(bndbox_file_name) == greenColor:
             self.allGeometriesPresent = True
             self.geometryCheckText.setText(self.text_geometryTitle + self.text_Good)
             self.meshButton.setEnabled(True)
             #TODO: Do not fully understand
-
 
     def meshingModule(self):
         # Meshing setup
@@ -193,7 +192,7 @@ class App(QWidget):
 
         confLocation  = generateConfFile(baseH, refCarRefinement, refBoxRefinement)
         print(hybridPath + " "+confLocation)
-        os.system(hybridPath + " "+confLocation)
+        os.system(hybridPath + " "+confLocation +" -print")
         self.meshRunning = True
         self.is_meshing_complete()
 
@@ -248,8 +247,6 @@ class App(QWidget):
         label.setPixmap(pixmap)
         label.move(self.vis_image_move_x, self.vis_image_move_y)
 
-
-
         self.show()
         #self.showMaximized()
     def draw_input_box(self, coordx, coordy, boxNumber, file_name , nameToPrint, color):
@@ -267,7 +264,6 @@ class App(QWidget):
             disp_text.move(whereX, whereY)
             disp_text.setFont(QFont(fontStyle, fontSize))
             return disp_text
-
 
     class QLineEditWithExtraFeatures(QLineEdit):
         def __init__(self, parent , xcoord, ycoord, display_text, prefilltext):
@@ -307,19 +303,23 @@ class QLineEditWithDrop(QLineEdit):
     def dragEnterEvent(self, e):
         if e.mimeData().hasUrls():
            e.accept()
+           #print(e.mimeData.urls())
+
         else:
            e.ignore()
 
     def dropEvent(self, e):
-        location = e.mimeData().text()
+        location1 = str(e.mimeData().urls())
+        location = location1[20:-3]
         self.fileChecker(location)
 
-    def fileChecker(self, locationFull):
-        if locationFull[-5:-2] == 'x_t':
-            #self.setText(locationFull)
 
-            if not locationFull[7:-2] == input_geometry_destination + '/'+self.change_to_file_name(self.boxNumber):
-                copyfile(locationFull[7:-2], input_geometry_destination + '/'+self.change_to_file_name(self.boxNumber))
+    def fileChecker(self, locationFull):
+        if locationFull[-3:] == 'x_t':
+            #self.setText(locationFull)
+            print(input_geometry_destination + '/'+self.change_to_file_name(self.boxNumber))
+            if not locationFull[7:] == input_geometry_destination + '/'+self.change_to_file_name(self.boxNumber):
+                copyfile(locationFull[7:], input_geometry_destination + '/'+self.change_to_file_name(self.boxNumber))
             else:
                 pass
                 #TODO: In status bar say location was the same
@@ -343,6 +343,61 @@ class QLineEditWithDrop(QLineEdit):
         if number == 3:
             return bndbox_file_name
 
+class QLineWithDrop(QLineEdit):
+    def __init__(self, title, parent, boxNumber, file_name, textToPrint,  fontStyle, fontSize):
+        super().__init__(title, parent)
+        self.setAcceptDrops(True)
+        self.boxNumber = boxNumber
+        self.file_name = file_name
+        self.parent = parent
+        self.setText(textToPrint)
+        self.setAlignment(QtCore.Qt.AlignCenter | QtCore.Qt.AlignVCenter)
+        self.setFont(QFont(fontStyle, fontSize))
+
+        self.setStyleSheet("border: 1px dashed black;")
+
+    def dragEnterEvent(self, e):
+        if e.mimeData().hasUrls():
+           e.accept()
+           #print(e.mimeData.urls())
+
+        else:
+           e.ignore()
+
+    def dropEvent(self, e):
+        location1 = str(e.mimeData().urls())
+        location = location1[20:-3]
+        self.fileChecker(location)
+
+
+    def fileChecker(self, locationFull):
+        if locationFull[-3:] == 'x_t':
+            #self.setText(locationFull)
+            print(input_geometry_destination + '/'+self.change_to_file_name(self.boxNumber))
+            if not locationFull[7:] == input_geometry_destination + '/'+self.change_to_file_name(self.boxNumber):
+                copyfile(locationFull[7:], input_geometry_destination + '/'+self.change_to_file_name(self.boxNumber))
+            else:
+                pass
+                #TODO: In status bar say location was the same
+                #TODO: Create CFD/Input_Files directory
+
+            print('It is a ' + self.change_to_file_name(self.boxNumber) + ' Box number:'+ str(self.boxNumber))
+            self.parent.on_geo_check_click()
+            self.parent.geometryCheckModule()
+
+
+        else:
+            pass
+            #TODO: In status bar say that it is not a parasolid file
+            #TODO: If the refinement box is second then send to refinement box
+
+    def change_to_file_name(self, number):
+        if number == 1:
+            return car_file_name
+        if number == 2:
+            return refbox_file_name
+        if number == 3:
+            return bndbox_file_name
 
 if __name__== '__main__':
     app = QApplication(sys.argv)

@@ -1,3 +1,4 @@
+import os
 
 display_fraction_of_screen = 1.1
 
@@ -5,15 +6,17 @@ car_file_name = 'car.x_t'
 refbox_file_name = 'refbox.x_t'
 bndbox_file_name = 'bndbox.x_t'
 
-input_geometry_destination = '/home/vikramaditya/PycharmProjects/Qt5-Youtube/CFD/Input_Files'
+current_file_dir = os.path.dirname(os.path.abspath(__file__))
+
+input_geometry_destination = current_file_dir+'/CFD/Input_Files'
 
 greyColor = '#ACA09D'
 greenColor = '#90EE90'
 redColor = '#DF7F67'
 
 #Set Numeca paths
-hybridPath = "/home/vikramaditya/numeca_software/bin/hexpresshybridopen72"
-FOpath = "/home/vikramaditya/numeca_software/bin/fineopen72"
+hybridPath = "/common/numeca/bin/hexpresshybridopen72"
+FOpath = "/common/numeca/bin/fineopen72"
 
 
 

@@ -1,0 +1,507 @@
+
+
+  <***>   HEXPRESS/Hybrid 7.2  -  Mar 25 2018   <***> 
+
+reading file /marketing/home/vikramaditya/pythonTraining/fullChain/Full-Chain-CFD-PyQt5/CFD/Mesh_Gen/mesh.conf
+
+*******************************************************************
+.conf file reading
+
+CellFactory: appending ../Input_Files/car.x_t to geometry
+CellFactory: appending ../Input_Files/bndbox.x_t to geometry
+CellFactory: appending ../Input_Files/refbox.x_t to geometry
+CellFactory: mesh file named mesh.hex will be generated
+CellFactory: Using binary file version 11
+CellFactory: baseH 0.5
+CellFactory: Geometry defined by startpoint 80 10 10
+Create selections from
+*
+with options ALLEDGES and SPLIT with angle 40 and prefix edge
+CellFactory: local refinement definition car* 5 5
+CellFactory: additional local refinement definition refbox* 3 3 1 
+
+ ... Try using HYBRID_MPROC_8 license 
+ HYBRID_MPROC_8 license successfully checked out 
+Maximum number of cores that will be used: 8
+
+
+*******************************************************************
+Compatibility check:
+
+Compatibility check: no unknown compatibility detected. 
+
+
+*******************************************************************
+Geometry reading
+
+selprefix car_
+extention .x_t
+selprefix bndbox_
+extention .x_t
+selprefix refbox_
+extention .x_t
+CellFactory: Time geometry import: 0.330926 sec
+CellFactory:*****************************************************
+
+*******************************************************************
+Checks, additional initializations & modifications of geometry
+
+CellFactory:*****************************************************
+CellFactory: Clean Geometry step
+CellFactory: Box has now center: 50 9.9 10   
+CellFactory: and size: 100
+  Boxes number after refine(): 9
+  Boxes number after refine(): 73
+  Boxes number after refine(): 585
+  Boxes number after refine(): 1481
+  Boxes number after refine(): 2889
+  Boxes number after refine(): 4137
+  Boxes number after refine(): 4137
+CellFactory: This geometry does not contain any degenerated face
+CellFactory: Cleaning was done in 0.00831294 sec
+CellFactory:*****************************************************
+CellFactory: Box has now center: 44 5 5.25   
+CellFactory: and size: 32
+  Boxes number after refine(): 9
+  Boxes number after refine(): 73
+  Boxes number after refine(): 585
+  Boxes number after refine(): 1481
+  Boxes number after refine(): 2441
+  Boxes number after refine(): 2441
+CellFactory: Marking local group definition 13
+All car_car|B2|B2_face_0 car_car|B2|B2_face_1 car_car|B2|B2_face_2 car_car|B2|B2_face_3 car_car|B2|B2_face_4 car_car|B2|B2_face_5 bndbox_bndbox|B2|B2_face_0 bndbox_bndbox|B2|B2_face_1 bndbox_bndbox|B2|B2_face_2 bndbox_bndbox|B2|B2_face_3 bndbox_bndbox|B2|B2_face_4 bndbox_bndbox|B2|B2_face_5 
+
+CellFactory: CREATESELECTIONSBYANGLE: 12 new selections have been created
+
+CellFactory: Selection to be mapped  All
+CellFactory: Selection of type  SOL
+CellFactory: Selection to be mapped  car_car|B2|B2_face_0
+CellFactory: Selection of type  SOL
+CellFactory: Selection to be mapped  car_car|B2|B2_face_1
+CellFactory: Selection of type  SOL
+CellFactory: Selection to be mapped  car_car|B2|B2_face_2
+CellFactory: Selection of type  SOL
+CellFactory: Selection to be mapped  car_car|B2|B2_face_3
+CellFactory: Selection of type  SOL
+CellFactory: Selection to be mapped  car_car|B2|B2_face_4
+CellFactory: Selection of type  SOL
+CellFactory: Selection to be mapped  car_car|B2|B2_face_5
+CellFactory: Selection of type  SOL
+CellFactory: Selection to be mapped  bndbox_bndbox|B2|B2_face_0
+CellFactory: Selection of type  SOL
+CellFactory: Selection to be mapped  bndbox_bndbox|B2|B2_face_1
+CellFactory: Selection of type  SOL
+CellFactory: Selection to be mapped  bndbox_bndbox|B2|B2_face_2
+CellFactory: Selection of type  SOL
+CellFactory: Selection to be mapped  bndbox_bndbox|B2|B2_face_3
+CellFactory: Selection of type  SOL
+CellFactory: Selection to be mapped  bndbox_bndbox|B2|B2_face_4
+CellFactory: Selection of type  SOL
+CellFactory: Selection to be mapped  bndbox_bndbox|B2|B2_face_5
+CellFactory: Selection of type  SOL
+CellFactory: Selection to be mapped  edge_allEdgeSel0
+CellFactory: Selection of type  SOL
+CellFactory: Selection to be mapped  edge_allEdgeSel1
+CellFactory: Selection of type  SOL
+CellFactory: Selection to be mapped  edge_allEdgeSel2
+CellFactory: Selection of type  SOL
+CellFactory: Selection to be mapped  edge_allEdgeSel3
+CellFactory: Selection of type  SOL
+CellFactory: Selection to be mapped  edge_allEdgeSel4
+CellFactory: Selection of type  SOL
+CellFactory: Selection to be mapped  edge_allEdgeSel5
+CellFactory: Selection of type  SOL
+CellFactory: Selection to be mapped  edge_allEdgeSel6
+CellFactory: Selection of type  SOL
+CellFactory: Selection to be mapped  edge_allEdgeSel7
+CellFactory: Selection of type  SOL
+CellFactory: Selection to be mapped  edge_allEdgeSel8
+CellFactory: Selection of type  SOL
+CellFactory: Selection to be mapped  edge_allEdgeSel9
+CellFactory: Selection of type  SOL
+CellFactory: Selection to be mapped  edge_allEdgeSel10
+CellFactory: Selection of type  SOL
+CellFactory: Selection to be mapped  edge_allEdgeSel11
+CellFactory: Selection of type  SOL
+CellFactory: Time geometry checks: 0.0145109 sec
+CellFactory:*****************************************************
+
+*******************************************************************
+Octree generation
+
+CellFactory: Box has now center: 50 9.9 10   
+CellFactory: and size: 100
+CellFactory: size now: 128
+CellFactory: with reflevels: 9
+  Boxes number after refine(): 9
+  Boxes number after refineMissing(): 9
+  Boxes number after refine(): 73
+  Boxes number after refineMissing(): 73
+  Boxes number after refine(): 585
+  Boxes number after refineMissing(): 585
+  Boxes number after refine(): 4681
+  Boxes number after refineMissing(): 4681
+  Boxes number after refine(): 11849
+  Boxes number after refineMissing(): 11849
+  Boxes number after refine(): 27849
+  Boxes number after refineMissing(): 27849
+  Boxes number after refine(): 64713
+  Boxes number after refineMissing(): 64713
+  Boxes number after refine(): 197145
+  Boxes number after refineMissing(): 197145
+  Boxes number after refine(): 822321
+  Boxes number after refineMissing(): 822321
+CellFactory: Time base refining: 0.382711 sec
+CellFactory:*****************************************************
+CellFactory: Time local refining: 0.001 sec
+CellFactory:*****************************************************
+CellFactory: Absolute Refinement Level 23
+CellFactory: Marking local definition car*
+CellFactory: Marking local definition refbox*
+  Boxes number after refine(): 1231641
+  Boxes number after closeRefine():1231641
+  Boxes number after refineMissing(): 1231641
+
+CellFactory: Absolute Refinement Level 22
+CellFactory: Marking local definition car*
+CellFactory: Marking local definition refbox*
+  Boxes number after refine(): 3538905
+  Boxes number after closeRefine():3538905
+  Boxes number after refineMissing(): 3538905
+
+CellFactory: Absolute Refinement Level 21
+CellFactory: Marking local definition car*
+CellFactory: Marking local definition refbox*
+  Boxes number after refine(): 18794313
+  Boxes number after closeRefine():18794313
+  Boxes number after refineMissing(): 18794313
+
+CellFactory: Absolute Refinement Level 20
+CellFactory: Marking local definition car*
+  Boxes number after refine(): 21152889
+  Boxes number after closeRefine():21152889
+  Boxes number after refineMissing(): 21152889
+
+CellFactory: Absolute Refinement Level 19
+CellFactory: Marking local definition car*
+  Boxes number after refine(): 30579625
+  Boxes number after closeRefine():30579625
+  Boxes number after refineMissing(): 30579625
+
+CellFactory: Absolute Refinement Level 18
+CellFactory: Any box is refined: stop refinement
+CellFactory:*****************************************************
+CellFactory: Time refining: 30.9091 sec
+
+*******************************************************************
+Basic smoothed, projected mesh creation
+
+CellFactory: Starting with DualMesh generation ...
+CellFactory: BaseNodes Inserted ...
+CellFactory: Cells inserted ...
+CellFactory: Dual Mesh built ...
+CellFactory: Dual Mesh flipped ...
+CellFactory: Marking DualMesh nodes
+CellFactory: Marking added DualMesh nodes
+CellFactory: dualmesh time: 22.525 sec
+CellFactory:*****************************************************
+CellFactory: Cells marked as material: 0
+CellFactory: Cells marked as boundary: 722728
+CellFactory: Cells unmarked          : 29547644
+CellFactory: Mark from inner startpoint
+CellFactory: Cells marked as material: 19544434
+CellFactory: Cells marked as boundary: 722728
+CellFactory: Cells unmarked          : 10003210
+CellFactory: Cells marked as material: 19544434
+CellFactory: Cells marked as boundary: 0
+CellFactory: Cells unmarked          : 10725938
+CellFactory: Cleaning  0 material -> outer nodes
+CellFactory: Cleaning  0 outer -> material nodes
+CellFactory: marking time: 11.2889 sec
+CellFactory:*****************************************************
+CellFactory: start Splitting for  25813120 cells ...
+Mark cells for different split configurations
+stage 1 done 
+stage 2 done
+Marking done in 4.12558 sec
+CellFactory: splitting ends with 20103791 cells.
+CellFactory: pseudosplittime time: 6.31758 sec
+CellFactory:*****************************************************
+CellFactory: check and correct irr surf struct mesh - begin
+CellFactory: Checking for irregular surface structures
+CellFactory: Irregular Points found: 0
+CellFactory: check and correct irr surf struct mesh - end
+CellFactory: Independent Regions found: 1
+CellFactory: cell marking time: 2.80794 sec
+CellFactory:*****************************************************
+CellFactory: serial time: 54.4984 sec
+  Boxes number after refine(): 9
+  Boxes number after refine(): 73
+  Boxes number after refine(): 89
+  Boxes number after refine(): 105
+  Boxes number after refine(): 129
+  Boxes number after refine(): 161
+  Boxes number after refine(): 217
+  Boxes number after refine(): 289
+  Boxes number after refine(): 289
+final numBoxes 2313
+CellFactory: Smoothing Surface
+CellFactory: Color mark tree: computing dependent vertices
+CellFactory: Number of dependent vertices 0
+CellFactory: projecting surface with parameters 0.25
+CellFactory: Smoothing Surface
+CellFactory: projecting surface with parameters 0.27
+CellFactory: Smoothing Surface
+CellFactory: projecting surface with parameters 0.29
+CellFactory: Smoothing Surface
+CellFactory: projecting surface with parameters 0.31
+CellFactory: Smoothing Surface
+CellFactory: projecting surface with parameters 0.33
+CellFactory: Smoothing Surface
+CellFactory: Patch CenterMapping bl
+CellFactory: PatchCenterMapping finished
+CellFactory: Patch CenterMapping done
+CellFactory: Changed patches 6
+CellFactory: Changed patches 0
+CellFactory: Corrected patches 13
+CellFactory: Corrected cells 13
+CellFactory: Changed patches (cleanIsolatedPartitions): 0
+CellFactory: Projection cares about 4790 edges
+CellFactory: projecting edges with parameters 0.385
+CellFactory: projecting surface with parameters 0.35
+CellFactory: Smoothing Surface
+CellFactory: Projection cares about 4790 edges
+CellFactory: projecting edges with parameters 0.407
+CellFactory: projecting surface with parameters 0.37
+CellFactory: Smoothing Surface
+CellFactory:*****************************************************
+CellFactory:*****************************************************
+CellFactory: Projection cares about 4790 edges
+CellFactory: projecting edges with parameters 0.429
+CellFactory: projecting surface with parameters 0.39
+CellFactory: Smoothing Surface
+CellFactory: Projection cares about 4790 edges
+CellFactory: projecting edges with parameters 0.451
+CellFactory: projecting surface with parameters 0.41
+CellFactory: Smoothing Surface
+CellFactory: Projection cares about 4790 edges
+CellFactory: projecting edges with parameters 0.473
+CellFactory: projecting surface with parameters 0.43
+CellFactory: Smoothing Surface
+  Boxes number after refine(): 9
+  Boxes number after refine(): 73
+  Boxes number after refine(): 137
+  Boxes number after refine(): 201
+  Boxes number after refine(): 297
+  Boxes number after refine(): 633
+  Boxes number after refine(): 1681
+  Boxes number after refine(): 4857
+  Boxes number after refine(): 5561
+  Boxes number after refine(): 5561
+final numBoxes 44489
+CellFactory: Calculating NodeLayer for 20081427 vertices
+CellFactory: done
+  Num negative jacobian:		181
+  Num negative jacobian:		181
+CellFactory: Smoothing with Laplace
+CellFactory: Color mark tree: computing dependent vertices
+CellFactory: Number of dependent vertices 0
+  Num negative jacobian:		13
+CellFactory: Time mesh creation: 123.729 sec
+CellFactory:*****************************************************
+CellFactory: Patch CenterMapping bl
+CellFactory: PatchCenterMapping finished
+CellFactory: Patch CenterMapping done
+CellFactory: Patch VertexMapping GeoAllEdgeSel bl
+CellFactory: PatchVertexMappingGeoAllEdgeSel finished
+CellFactory: Patch vertexMapping GeoAllEdgeSel done
+CellFactory: mapping selection  car_car|B2|B2_face_0
+CellFactory: mapping selection  car_car|B2|B2_face_1
+CellFactory: mapping selection  car_car|B2|B2_face_2
+CellFactory: mapping selection  car_car|B2|B2_face_3
+CellFactory: mapping selection  car_car|B2|B2_face_4
+CellFactory: mapping selection  car_car|B2|B2_face_5
+CellFactory: mapping selection  bndbox_bndbox|B2|B2_face_0
+CellFactory: mapping selection  bndbox_bndbox|B2|B2_face_1
+CellFactory: mapping selection  bndbox_bndbox|B2|B2_face_2
+CellFactory: mapping selection  bndbox_bndbox|B2|B2_face_3
+CellFactory: mapping selection  bndbox_bndbox|B2|B2_face_4
+CellFactory: mapping selection  bndbox_bndbox|B2|B2_face_5
+CellFactory: mapping selection  edge_allEdgeSel0
+CellFactory: mapping selection  edge_allEdgeSel1
+CellFactory: mapping selection  edge_allEdgeSel2
+CellFactory: mapping selection  edge_allEdgeSel3
+CellFactory: mapping selection  edge_allEdgeSel4
+CellFactory: mapping selection  edge_allEdgeSel5
+CellFactory: mapping selection  edge_allEdgeSel6
+CellFactory: mapping selection  edge_allEdgeSel7
+CellFactory: mapping selection  edge_allEdgeSel8
+CellFactory: mapping selection  edge_allEdgeSel9
+CellFactory: mapping selection  edge_allEdgeSel10
+CellFactory: mapping selection  edge_allEdgeSel11
+CellFactory: Time selection wrapping: 11.3158 sec
+CellFactory:*****************************************************
+Current number of cells: 20103863
+
+*******************************************************************
+Mesh with boundary layer
+
+CellFactory: Checking Surface
+  Boxes number after refine(): 9
+  Boxes number after refine(): 73
+  Boxes number after refine(): 137
+  Boxes number after refine(): 257
+  Boxes number after refine(): 353
+  Boxes number after refine(): 705
+  Boxes number after refine(): 1753
+  Boxes number after refine(): 4929
+  Boxes number after refine(): 5649
+  Boxes number after refine(): 5649
+final numBoxes 45193
+CellFactory: Calculating NodeLayer for 20618403 vertices
+CellFactory: done
+  Num negative jacobian:		15
+CellFactory: Smoothing with Laplace
+CellFactory: Color mark tree: computing dependent vertices
+CellFactory: Number of dependent vertices 0
+  Num negative jacobian:		9
+  Num negative jacobian:		8
+  Num negative jacobian:		2
+  Num negative jacobian:		6
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num cells with ratio > 0.94 :           3
+  MaxRatio:                              0.977407
+  MaxRatio Celltype:                     4
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num cells with ratio > 0.999 :           0
+  MaxRatio:                              0.967296
+  MaxRatio Celltype:                     4
+  Num cells with ratio > 0.94 :           3
+  MaxRatio:                              0.967296
+  MaxRatio Celltype:                     4
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num cells with ratio > 0.94 :           3
+  MaxRatio:                              0.96726
+  MaxRatio Celltype:                     4
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num cells with ratio > 0.94 :           3
+  MaxRatio:                              0.967286
+  MaxRatio Celltype:                     4
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num cells with ratio > 0.94 :           3
+  MaxRatio:                              0.967295
+  MaxRatio Celltype:                     4
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num cells with ratio > 0.98 :           0
+  MaxRatio:                              0.967297
+  MaxRatio Celltype:                     4
+CellFactory: Time mesh smoothing: 348.385 sec
+CellFactory:*****************************************************
+
+*******************************************************************
+Global optimisation
+
+  Num cells with ratio > 0.94 :           3
+  MaxRatio:                              0.967297
+  MaxRatio Celltype:                     4
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num cells with ratio > 0.96 :           1
+  MaxRatio:                              0.967297
+  MaxRatio Celltype:                     4
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num cells with ratio > 0.96 :           1
+  MaxRatio:                              0.967297
+  MaxRatio Celltype:                     4
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+global optimization time 0.001 sec
+CellFactory: Time viscous layers: 0.574985 sec
+CellFactory:*****************************************************
+
+*******************************************************************
+Final mapping, export and quality analysis
+
+CellFactory: Time post process: 3.73134 sec
+CellFactory:*****************************************************
+  Num negative cells:			0
+CellFactory: Time meshing overall: 551.614 sec
+CellFactory: Cpu time meshing overall: 3928.13 sec
+CellFactory:*****************************************************
+CellFactory: writing file /marketing/home/vikramaditya/pythonTraining/fullChain/Full-Chain-CFD-PyQt5/CFD/Mesh_Gen//mesh.hex
+Start Hexpress export at 16:47:57
+
+Proceed block 0/0: mesh
+CellFactory: Calculating NodeLayer for 20618403 vertices
+CellFactory: done
+  Num concave cells:			0
+  Num twisted cells:			0
+  Num negative cells:			0
+Mesh is generated at 16:49:34
+CellFactory: Time mesh export: 96.5989 sec
+CellFactory:*****************************************************
+  Num negative jacobian:		0
+  Num concave cells:			0
+  Num twisted cells:			0
+  Num negative cells:			0
+*******************************************************************
+Mesh info 
+Number of hexahedrons     20055939
+Number of tetrahedrons    88
+Number of prisms          395380
+Number of pyramids        190761
+
+Number of cells           20642168
+Number of vertices        20618403
+Number of patches         538305
+Number of selections      11
+
+Number of neg. jacobian   0
+
+Number of concave cells   0
+Number of twisted cells   0
+Number of neg. cells      0
+
+*******************************************************************
+Meshing info 
+Number of geometry pa.    1712
+Number of add-geometry pa.1580
+*******************************************************************
+Mesh Quality
+
+NUMECA CFD quality criteria
+  Num negative jacobian:		0
+  Num concave cells:			0
+  Num twisted cells:			0
+  Num negative cells:			0
+  Minimal edge-length:			0.00151227
+  Average edge-length:			0.0593768
+  Maximal edge-length:			1.1868
+  Number of edges in [0, 1e-05]:	0
+  Max equiangular skewness:		0.753248
+  Max adjacent volume ratio:		12.3265
+  Max expansion ratio:			7.54328
+*******************************************************************
