@@ -3,8 +3,7 @@ from variables import *
 
 
 def color_return(parasolid_file):
-    current_file_dir = os.path.dirname(os.path.abspath(__file__))
-    file_exists = os.path.exists(current_file_dir + '/CFD/Input_Files/' + parasolid_file)
+    file_exists = os.path.exists(geometry_directory + parasolid_file)
 
     if file_exists:
         return greenColor
@@ -16,14 +15,13 @@ def color_return(parasolid_file):
 def generateConfFile(baseH, refCarRefinement, refBoxRefinement):
     current_file_dir = os.path.dirname(os.path.abspath(__file__))
     # TODO: Create Mesh_Gen if not already available
-    conf_location = current_file_dir + '/CFD/Mesh_Gen/mesh.conf'
 
     try:
-        os.remove(conf_location)
+        os.remove(conf_file_location)
     except OSError:
         pass
 
-    with open(conf_location, 'a+') as f:
+    with open(conf_file_location, 'a+') as f:
         f.write('INFILENAMES 2\n')
         f.write('../Input_Files/' + car_file_name + '\n')
         f.write('../Input_Files/' + bndbox_file_name + '\n\n')
@@ -31,7 +29,9 @@ def generateConfFile(baseH, refCarRefinement, refBoxRefinement):
         f.write('ADDINFILENAMES 1' + '\n')
         f.write('../Input_Files/' + refbox_file_name + '\n\n')
 
-        f.write('OUTFILENAME mesh.hex' + '\n\n')
+        f.write('OUTFILENAME ' + meshName + '\n\n')
+        f.write('WRITESPBMESH' + '\n\n')
+
         f.write('USEBINFILEVERSION 11' + '\n')
         f.write('BASEH ' + baseH + '\n')
         f.write('MARKBYSTARTPOINT 80 10 10' + '\n')
@@ -45,13 +45,14 @@ def generateConfFile(baseH, refCarRefinement, refBoxRefinement):
 
         f.write('END')
 
-    return conf_location
+    return conf_file_location
 
 
 def generateSimulationMacro(inletVel, turbIntensity, liftDir, dragDir):
     current_file_dir = os.path.dirname(os.path.abspath(__file__))
+    print(current_file_dir)
     # TODO: to create a folder Simulation if not alreayd present
-    FOmacro = current_file_dir + '/CFD/Simulation/FOmarco.py'
+    os.system('rm -rf '+simulation_directory+ '/*')
 
 
     #TODO: Clean up inletVel
@@ -62,28 +63,28 @@ def generateSimulationMacro(inletVel, turbIntensity, liftDir, dragDir):
         initVelVector = inletVel + ',0, 0'
     elif dragDir == 'Y':
         inletVelocity = 'Vy'
-        initVelVector = '0,' +inletVel+ ', 0'
+        initVelVector = '0,' +inletVel + ', 0'
     elif dragDir == 'Z':
         inletVelocity = 'Vz'
         initVelVector = '0, 0,'+inletVel
 
-    k = calc_TKE_from_intensity(turbIntensity)
+    k = calc_TKE_from_intensity(turbIntensity, inletVel)
     epsilon = calc_epsilon_from_TKE(k)
 
     #TODO: Format checks for inlet values
 
     try:
-        os.remove(FOmacro)
+        os.remove(simulationMacro)
     except OSError:
         pass
 
     #TODO: Getting correct bcs from bcs file? and their numbers
 
-    with open(FOmacro, 'a+') as f:
+    with open(simulationMacro, 'a+') as f:
         f.write('script_version(2.2)\n')
-        f.write('FHX.create_project("mySimulation")\n')
+        f.write('FHX.create_project('+'"'+simulation_directory+projectName+'")\n')
         f.write('FHX.set_active_computations([0])\n')
-        f.write('FHX.link_mesh_file("../Mesh-Gen/mesh.igg")'+ '\n')
+        f.write('FHX.link_mesh_file('+'"'+meshing_directory+"mesh.igg"+'"'+')\n')
         f.write('FHX.set_precision_mode("double")'+ '\n')
         f.write('FHX.set_mathematical_model(0, K_OMEGA_M_SST_EXT_WALL_FUNCTION)'+ '\n')
         f.write('FHX.set_preconditioning(0, 1)'+ '\n')
@@ -91,7 +92,9 @@ def generateSimulationMacro(inletVel, turbIntensity, liftDir, dragDir):
         f.write('FHX.set_preconditioning(0, 1)'+ '\n')
         f.write('FHX.set_preconditioning(0, 1)'+ '\n')
         f.write('FHX.set_preconditioning(0, 1)'+ '\n')
-        f.write('FHX.get_bc_patch(0, 7).set_parameter_value("' + str(inletVelocity) + '", 5)'+ '\n')
+        f.write('FHX.get_bc_patch(0, 7).set_bc_type([24, 5])'+ '\n')
+        f.write('FHX.get_bc_patch(0, 7).set_parameter_value("|V|",' + str(inletVel) +')'+ '\n')
+
         f.write('FHX.get_bc_patch(0, 7).set_parameter_value("k", '+ str(k) + ')'+ '\n')
         f.write('FHX.get_bc_patch(0, 7).set_parameter_value("Epsilon", '+ str(epsilon) +')'+ '\n')
 
@@ -126,13 +129,16 @@ def generateSimulationMacro(inletVel, turbIntensity, liftDir, dragDir):
 
         #TODO Set directions for drag and lift
 
-        return FOmacro
+        return simulationMacro
 
-def calc_TKE_from_intensity(TI):
-    return 2.78E-05
+def calc_TKE_from_intensity(TurbIntensity, vel):
+    TI = float(TurbIntensity[:-1])
+    vel = float(vel)
+    velDash = TI*vel/100
+    return 1.5*velDash*velDash
 
 def calc_epsilon_from_TKE(TKE):
-    return 4.63E-6
+    return 0.09*TKE*TKE/(1.46*1e-5)
 
 
 
