@@ -136,6 +136,9 @@ class App(QWidget):
         self.vis_sim_heightLevel2 = window_height * 0.65
         self.vis_sim_heightLevel3 = window_height * 0.725
         self.vis_sim_heightLevel4 = window_height * 0.8
+        
+        #TODO: To make it handle a resizing event 
+        
 
     def allText(self):
         self.text_geometryTitle = 'Check Geometry  '
@@ -164,6 +167,7 @@ class App(QWidget):
         qp.end()
 
     def drawLines(self, qp):
+        #Draws lines for the basic design of the GUI
         pen = QPen(Qt.black, 2, Qt.SolidLine)
         qp.setPen(pen)
         qp.drawLine(0, self.vis_half_y, self.vis_full_x, self.vis_half_y)
@@ -175,7 +179,7 @@ class App(QWidget):
         qp.drawRect(xcoord, ycoord, self.vis_widthBoxDrop, self.vis_heightBoxDrop)
 
     def geometryCheckModule(self):
-        # Check geometry
+        # First Column. Geometry related
         self.geometryCheckText = self.display_text(self, self.text_geometryTitle + self.text_Bad, self.vis_before_title1_x,
                                                    self.vis_half_y, LargeFont, LargeFontSize)
 
@@ -189,6 +193,7 @@ class App(QWidget):
         self.geometryCheckButton.clicked.connect(self.on_geo_check_click)
 
     def on_geo_check_click(self):
+        #What happens when the geometry check button is clicked
         self.carColor = color_return(car_file_name)
         self.refBoxColor = color_return(refbox_file_name)
         self.bndBoxColor = color_return(bndbox_file_name)
@@ -211,7 +216,7 @@ class App(QWidget):
 
 
     def meshingModule(self):
-        # Meshing setup
+        # Settings in the meshing column
         self.meshCheckText = self.display_text(self, self.text_geometryTitle + self.text_Bad, self.vis_before_title2_x,
                                                    self.vis_half_y, LargeFont, LargeFontSize)
 
@@ -234,6 +239,7 @@ class App(QWidget):
             self.meshStopbutton.setEnabled(False)
 
     def on_mesh_generation_click(self):
+        #What happens when the start meshing button is clicked
         baseH = self.BaseHText.text()
         refCarRefinement = self.refCarText.text()
         refBoxRefinement = self.refBoxText.text()
@@ -241,11 +247,13 @@ class App(QWidget):
         confLocation  = generateConfFile(baseH, refCarRefinement, refBoxRefinement)
         command_to_run = hybridPath + " "+confLocation +" -print"
         proc = subprocess.Popen([command_to_run], shell=True , preexec_fn = os.setsid)
-
+        #TODO: Investigate why os.system shows on display but subprocess does not display
+        ##TODO: subprocess and os.system do not wait for process to finish. But check_output does.
         self.meshRunning = True
         self.is_meshing_complete()
 
     def is_meshing_complete(self):
+        #Enters this function every 0.5 seconds to see if the button should be enabled 
         hex_file = meshing_directory+ meshName
         if os.path.exists(hex_file):
             self.meshReady = True
@@ -259,7 +267,7 @@ class App(QWidget):
 
 
     def simulationModule(self):
-
+        #settings in the simulation column (last column)
         self.simulationTitleText = self.display_text(self, self.text_simulationTitle  + self.text_Bad, self.vis_simulation_button_x,
                                                      self.vis_half_y, LargeFont, LargeFontSize)
 
@@ -283,8 +291,8 @@ class App(QWidget):
             self.simulationButton.setEnabled(True)
             self.simStopbutton.setEnabled(True)
 
-    @pyqtSlot()
     def on_simulation_button_click(self):
+        #What happens when the simulation start button is clicked
         inletVelocity = self.inletVelText.text()
         turbulenceIntensity = self.turbIntensityText.text()
         liftDirection = self.liftDirText.text()
@@ -320,6 +328,7 @@ class App(QWidget):
 
 
     def handleStopButton(self, n):
+        #Stop buttons fir meshing and simulation
         if n== 1:
             process = "hexpresshybridx86_64"
             #TODO: Very badly implemented. Get PID somehwo
