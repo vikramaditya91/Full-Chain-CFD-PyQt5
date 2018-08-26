@@ -2,7 +2,6 @@
 
 import sys, os
 from PyQt5.QtCore import *
-from PyQt5 import QtCore
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 
@@ -27,12 +26,13 @@ class App(QWidget):
         self.carColor = redColor
         self.refBoxColor = redColor
         self.bndBoxColor = redColor
-        self.initUI()
         self.geometryCheckModule()
         self.meshingModule()
         self.simulationModule()
         self.setAcceptDrops(True)
         self.updateButtonsOnTime(500)
+        self.initUI()
+
         self.update()
 
 
@@ -354,7 +354,7 @@ class App(QWidget):
             self.statusText.setText(self.text_StatusBar+ self.text_Status_fully_completed)
 
 
-        if not os.path.exists(hex_file):
+        if not os.path.exists(meshing_directory+meshName):
             self.simulationReady = True
 
 
@@ -373,7 +373,7 @@ class App(QWidget):
         disp_text.setText(toPrint)
         disp_text.move(whereX, whereY)
         disp_text.setFont(QFont(fontStyle, fontSize))
-        disp_text.setAlignment(QtCore.Qt.AlignCenter | QtCore.Qt.AlignVCenter)
+        disp_text.setAlignment(Qt.AlignCenter | Qt.AlignVCenter)
         return disp_text
 
     def draw_input_box(self, coordx, coordy, boxNumber, file_name, nameToPrint, color):
@@ -402,7 +402,7 @@ class QPushStopButton(QPushButton):
     def __init__(self, parent, move_x, move_y):
         super().__init__(parent)
         self.setIcon(QIcon('stop.png'))
-        self.setIconSize(QtCore.QSize(parent.vis_stopButtonWidth, parent.vis_stopButtonWidth))
+        self.setIconSize(QSize(parent.vis_stopButtonWidth, parent.vis_stopButtonWidth))
         self.move(move_x, move_y)
 
 class QLineEditWithInputValue(QLineEdit):
@@ -413,7 +413,7 @@ class QLineEditWithInputValue(QLineEdit):
         self.resize(parent.vis_input_box_width, parent.vis_input_box_height)
         self.setText(str(prefilltext))
         self.setFont(QFont(MediumFont, MediumFontSize))
-        self.setAlignment(QtCore.Qt.AlignCenter | QtCore.Qt.AlignVCenter)
+        self.setAlignment(Qt.AlignCenter | Qt.AlignVCenter)
 
 
 
@@ -434,7 +434,7 @@ class QLineEditWithDrop(QLineEdit):
         self.file_name = file_name
         self.parent = parent
         self.setText(textToPrint)
-        self.setAlignment(QtCore.Qt.AlignCenter | QtCore.Qt.AlignVCenter)
+        self.setAlignment(Qt.AlignCenter | Qt.AlignVCenter)
         self.setFont(QFont(fontStyle, fontSize))
         self.setStyleSheet("border: 1px dashed black;")
 
