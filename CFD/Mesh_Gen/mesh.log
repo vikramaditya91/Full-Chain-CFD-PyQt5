@@ -348,3 +348,139 @@ CellFactory: Number of dependent vertices 0
   Num negative jacobian:		9
   Num negative jacobian:		0
   Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num cells with ratio > 0.94 :           2
+  MaxRatio:                              0.963706
+  MaxRatio Celltype:                     4
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num cells with ratio > 0.999 :           0
+  MaxRatio:                              0.955083
+  MaxRatio Celltype:                     4
+  Num cells with ratio > 0.94 :           2
+  MaxRatio:                              0.955083
+  MaxRatio Celltype:                     4
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num cells with ratio > 0.94 :           2
+  MaxRatio:                              0.954778
+  MaxRatio Celltype:                     4
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num cells with ratio > 0.94 :           2
+  MaxRatio:                              0.954682
+  MaxRatio Celltype:                     4
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num cells with ratio > 0.94 :           2
+  MaxRatio:                              0.95462
+  MaxRatio Celltype:                     4
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num cells with ratio > 0.98 :           0
+  MaxRatio:                              0.954609
+  MaxRatio Celltype:                     4
+CellFactory: Time mesh smoothing: 50.2754 sec
+CellFactory:*****************************************************
+
+*******************************************************************
+Global optimisation
+
+  Num cells with ratio > 0.94 :           2
+  MaxRatio:                              0.954609
+  MaxRatio Celltype:                     4
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num cells with ratio > 0.96 :           0
+  MaxRatio:                              0.954597
+  MaxRatio Celltype:                     4
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num cells with ratio > 0.96 :           0
+  MaxRatio:                              0.954597
+  MaxRatio Celltype:                     4
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+  Num negative jacobian:		0
+global optimization time 0.001 sec
+CellFactory: Time viscous layers: 0.109306 sec
+CellFactory:*****************************************************
+
+*******************************************************************
+Final mapping, export and quality analysis
+
+CellFactory: Time post process: 0.453166 sec
+CellFactory:*****************************************************
+  Num negative cells:			0
+CellFactory: Time meshing overall: 86.823 sec
+CellFactory: Cpu time meshing overall: 577.5 sec
+CellFactory:*****************************************************
+CellFactory: writing file /marketing/home/vikramaditya/pythonTraining/fullChain/Full-Chain-CFD-PyQt5/CFD/Mesh_Gen//mesh.hex
+Start Hexpress export at 18:23:19
+
+Proceed block 0/0: mesh
+CellFactory: Calculating NodeLayer for 2632827 vertices
+CellFactory: done
+  Num concave cells:			0
+  Num twisted cells:			0
+  Num negative cells:			0
+Mesh is generated at 18:23:32
+CellFactory: writing additional spb output file /marketing/home/vikramaditya/pythonTraining/fullChain/Full-Chain-CFD-PyQt5/CFD/Mesh_Gen//mesh.spb.gz
+CellFactory: Time mesh export: 18.8203 sec
+CellFactory:*****************************************************
+  Num negative jacobian:		0
+  Num concave cells:			0
+  Num twisted cells:			0
+  Num negative cells:			0
+*******************************************************************
+Mesh info 
+Number of hexahedrons     2540958
+Number of tetrahedrons    72
+Number of prisms          56868
+Number of pyramids        25758
+
+Number of cells           2623656
+Number of vertices        2632827
+Number of patches         100610
+Number of selections      11
+
+Number of neg. jacobian   0
+
+Number of concave cells   0
+Number of twisted cells   0
+Number of neg. cells      0
+
+*******************************************************************
+Meshing info 
+Number of geometry pa.    1712
+Number of add-geometry pa.1580
+*******************************************************************
+Mesh Quality
+
+NUMECA CFD quality criteria
+  Num negative jacobian:		0
+  Num concave cells:			0
+  Num twisted cells:			0
+  Num negative cells:			0
+  Minimal edge-length:			0.0113666
+  Average edge-length:			0.166623
+  Maximal edge-length:			1.1868
+  Number of edges in [0, 1e-05]:	0
+  Max equiangular skewness:		0.765721
+  Max adjacent volume ratio:		11.8302
+  Max expansion ratio:			6.76771
+*******************************************************************
