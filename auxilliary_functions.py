@@ -109,7 +109,7 @@ def generateSimulationMacro(inletVel, turbIntensity, liftDir, dragDir):
 
         f.write('FHX.set_CPU_booster_flag(1)'+ '\n')
         f.write('FHX.set_MG_level_number(3)'+ '\n')
-        f.write('FHX.set_MG_number_of_cycles(500)'+ '\n')
+        f.write('FHX.set_MG_number_of_cycles(100)'+ '\n')
         f.write('FHX.set_MG_CPU_booster_flag(0)'+ '\n')
         f.write('FHX.set_MG_CFL_number(1)'+ '\n')
         f.write('FHX.set_numerical_scheme(0, CENTRAL_MATRIX_SCHEME)'+ '\n')
@@ -119,7 +119,7 @@ def generateSimulationMacro(inletVel, turbIntensity, liftDir, dragDir):
         f.write('FHX.set_outputs_flow_configuration(0, 0)'+ '\n')
         f.write('FHX.set_outputs_reference_flag(0, 1)'+ '\n')
         f.write('FHX.set_convergence_criteria(-10)'+ '\n')
-        f.write('FHX.set_nb_iter_max(1000)'+ '\n')
+        f.write('FHX.set_nb_iter_max(100)'+ '\n')
 
         f.write('FHX.set_launching_mode(1)'+ '\n')
         f.write('FHX.set_number_of_processes(4)'+ '\n')

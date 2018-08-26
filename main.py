@@ -23,23 +23,35 @@ class App(QWidget):
         self.title = 'Full chain CFD'
         self.allGeometriesPresent = False
         self.meshReady = False
+        self.meshRunning = False
         self.carColor = redColor
         self.refBoxColor = redColor
         self.bndBoxColor = redColor
+        self.initUI()
         self.geometryCheckModule()
         self.meshingModule()
         self.simulationModule()
-        self.initUI()
         self.setAcceptDrops(True)
+        self.updateButtonsOnTime(500)
         self.update()
-        self.movie = QMovie("loading.gif")
-        self.movie.frameChanged.connect(self.repaint)
-        self.meshRunning = False
 
-        self._status_update_timer = QTimer(self)
-        self._status_update_timer.setSingleShot(False)
-        self._status_update_timer.timeout.connect(self.is_meshing_complete)
-        self._status_update_timer.start(500)
+
+        #TODO: handle reversal of tasks. Mesh was already present
+
+
+
+
+    def initUI(self):
+        self.setWindowTitle(self.title)
+        # Insert domain image
+
+        labelDomainImage = QLabel(self)
+        pixmapDomainImage = QPixmap('GIMP_Domain.png')
+        pixmapDomainImage = pixmapDomainImage.scaledToWidth(self.vis_domainImageWidth)
+        labelDomainImage.setPixmap(pixmapDomainImage)
+        labelDomainImage.move(self.vis_image_move_x, self.vis_image_move_y)
+
+        self.show()
 
     def screenAdjust (self):
 
@@ -65,7 +77,7 @@ class App(QWidget):
         self.vis_widthBoxDrop = window_height / (3)
         self.vis_heightBoxDrop = window_height / (3*6)
 
-        self.vis_domainImageWidth = window_width / 1.5
+        self.vis_domainImageWidth = window_width / 1.2
         self.vis_StopImageWidth = window_width/ 20
         self.vis_image_move_x = (window_width - self.vis_domainImageWidth) / 2
         self.vis_image_move_y = window_height/(3*4)
@@ -80,6 +92,7 @@ class App(QWidget):
 
         self.vis_pushButtonHeight = window_height/15
 
+
         ############  WIDTH - General
 
         self.vis_one_third_x = window_width/ 3
@@ -87,6 +100,8 @@ class App(QWidget):
         self.vis_half_x = window_width/ 2
         self.vis_full_x = window_width
         self.vis_pushButtonWidth = window_width/5.5
+        self.vis_StatusIndicator_x = window_width/4
+
 
         ############WIDTH - Geometry specific
         self.vis_before_title1_x = window_width/15
@@ -116,6 +131,10 @@ class App(QWidget):
         self.vis_two_third_y = window_height * 2 / 3
         self.vis_half_y = window_height / 2
         self.vis_full_y = window_height
+
+        self.vis_StatusIndicator_y =   0*window_height*0.05
+
+
 
         ##########HEIGHT - Geoemtry specific
         self.vis_geo_heightLevel1 = window_height * 0.575
@@ -153,6 +172,12 @@ class App(QWidget):
         self.text_simStartButtonText = 'Start simulation'
         self.text_simStartButtontooltip = 'This starts the FINEOpen simulation'
 
+        self.text_StatusBar = "STATUS: "
+        self.text_Status_drop_geometries = "Drop the geometries with a drag-and-drop"
+        self.text_Status_start_meshing = "Geometries are ready. Start the meshing"
+        self.text_Status_start_simulation = "Mesh is ready. Start the simulation"
+        self.text_Status_fully_completed = "The simulation has been performed. Check out the results"
+
         self.text_Bad = u'\u2717'
         self.text_Good = u'\u2713'
 
@@ -188,6 +213,10 @@ class App(QWidget):
                                           self.vis_geometry_button_y )
         self.geometryCheckButton.clicked.connect(self.on_geo_check_click)
 
+        self.statusText = self.display_text(self, self.text_StatusBar + self.text_Status_drop_geometries,
+                                                   self.vis_StatusIndicator_x,
+                                                   self.vis_StatusIndicator_y, LargeFont, LargeFontSize)
+
     def on_geo_check_click(self):
         self.carColor = color_return(car_file_name)
         self.refBoxColor = color_return(refbox_file_name)
@@ -203,16 +232,18 @@ class App(QWidget):
             self.geometryCheckText.setText(self.text_geometryTitle + self.text_Good)
             self.meshButton.setEnabled(True)
             self.meshStopbutton.setEnabled(True)
+            self.statusText.setText(self.text_StatusBar+ self.text_Status_start_meshing)
         else:
             self.allGeometriesPresent = False
             self.geometryCheckText.setText(self.text_geometryTitle + self.text_Bad)
             self.meshButton.setEnabled(False)
             self.meshStopbutton.setEnabled(False)
+            self.statusText.setText(self.text_StatusBar+ self.text_Status_drop_geometries)
 
 
     def meshingModule(self):
         # Meshing setup
-        self.meshCheckText = self.display_text(self, self.text_geometryTitle + self.text_Bad, self.vis_before_title2_x,
+        self.meshCheckText = self.display_text(self, self.text_meshTitle + self.text_Bad, self.vis_before_title2_x,
                                                    self.vis_half_y, LargeFont, LargeFontSize)
 
 
@@ -233,6 +264,7 @@ class App(QWidget):
             self.meshButton.setEnabled(False)
             self.meshStopbutton.setEnabled(False)
 
+
     def on_mesh_generation_click(self):
         baseH = self.BaseHText.text()
         refCarRefinement = self.refCarText.text()
@@ -251,10 +283,17 @@ class App(QWidget):
             self.meshReady = True
             self.simulationButton.setEnabled(True)
             self.simStopbutton.setEnabled(True)
+            self.meshCheckText.setText(self.text_meshTitle + self.text_Good)
+            self.statusText.setText(self.text_StatusBar+ self.text_Status_start_simulation)
+
+
         if not os.path.exists(hex_file):
             self.meshReady = False
             self.simulationButton.setEnabled(False)
             self.simStopbutton.setEnabled(False)
+            self.meshCheckText.setText(self.text_meshTitle + self.text_Bad)
+
+
 
 
 
@@ -298,7 +337,9 @@ class App(QWidget):
 
         pythonFOMacroLocation = generateSimulationMacro(inletVelocity, turbulenceIntensity, liftDirection, dragDirection)
         print(FOpath + " " + pythonFOMacroLocation)
-        MacroFOSetup = subprocess.Popen([FOpath + " -script " + pythonFOMacroLocation + " -batch"], shell=True , preexec_fn = os.setsid)
+        #MacroFOSetup = subprocess.Popen([FOpath + " -script " + pythonFOMacroLocation + " -batch"], shell=True , preexec_fn = os.setsid)
+        check_output([FOpath + " -script " + pythonFOMacroLocation + " -batch"], shell=True , preexec_fn = os.setsid)
+
 
         print(simulationBat)
         if os.path.exists(simulationBat):
@@ -306,17 +347,15 @@ class App(QWidget):
         if not os.path.exists(simulationBat):
             raise ValueError('the FO macro did not work')
 
-    def initUI(self):
-        self.setWindowTitle(self.title)
-        # Insert domain image
+    def is_simulation_complete(self):
+        if os.path.exists(simulationCFView):
+            self.simulationReady = True
+            self.simulationTitleText.setText(self.text_simulationTitle + self.text_Good)
+            self.statusText.setText(self.text_StatusBar+ self.text_Status_fully_completed)
 
-        labelDomainImage = QLabel(self)
-        pixmapDomainImage = QPixmap('GIMP_Domain.png')
-        pixmapDomainImage = pixmapDomainImage.scaledToWidth(self.vis_domainImageWidth)
-        labelDomainImage.setPixmap(pixmapDomainImage)
-        labelDomainImage.move(self.vis_image_move_x, self.vis_image_move_y)
 
-        self.show()
+        if not os.path.exists(hex_file):
+            self.simulationReady = True
 
 
     def handleStopButton(self, n):
@@ -324,9 +363,9 @@ class App(QWidget):
             process = "hexpresshybridx86_64"
             #TODO: Very badly implemented. Get PID somehwo
         if n==2:
-            process = "hexstream"
+            process = "hexstreamdpx86_64"
 
-        os.system("killall -9 "+process)
+        os.system("pkill -f "+process)
 
 
     def display_text(self, parent, toPrint, whereX, whereY, fontStyle, fontSize):
@@ -350,6 +389,13 @@ class App(QWidget):
 
         if e.key() == Qt.Key_Escape:
             self.close()
+
+    def updateButtonsOnTime(self, milisecs):
+        self._status_update_timer = QTimer(self)
+        self._status_update_timer.setSingleShot(False)
+        self._status_update_timer.timeout.connect(self.is_meshing_complete)
+        self._status_update_timer.timeout.connect(self.is_simulation_complete)
+        self._status_update_timer.start(500)
 
 
 class QPushStopButton(QPushButton):

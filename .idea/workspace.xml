@@ -2,20 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c6a7575-d119-4834-b3aa-71c16c2770c2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/didntunderstand.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_unused/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_unused/test1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CFD/Mesh_Gen/Report_mesh/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/CFD/Mesh_Gen/Report_mesh/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CFD/Mesh_Gen/Report_mesh/mesh.conf" beforeDir="false" afterPath="$PROJECT_DIR$/CFD/Mesh_Gen/Report_mesh/mesh.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CFD/Mesh_Gen/Report_mesh/mesh.log" beforeDir="false" afterPath="$PROJECT_DIR$/CFD/Mesh_Gen/Report_mesh/mesh.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CFD/Mesh_Gen/Report_mesh/statistics.html" beforeDir="false" afterPath="$PROJECT_DIR$/CFD/Mesh_Gen/Report_mesh/statistics.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CFD/Simulation/FOmarco.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CFD/mesh.hex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CFD/meshing.conf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CFD/refbox.x_t" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CFD/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CFD/Input_Files/bndbox.x_t" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CFD/Input_Files/car.x_t" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CFD/Input_Files/refbox.x_t" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GIMP_Domain.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GIMP_Domain.xcf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/auxilliary_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/auxilliary_functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fullSimulation.py" beforeDir="false" afterPath="$PROJECT_DIR$/fullSimulation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/didntunderstand.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fullSimulation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/play.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/variables.py" beforeDir="false" afterPath="$PROJECT_DIR$/variables.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,24 +37,24 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="10" />
+          <entry key="py" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="10" />
+          <entry key="Python" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="14" />
-          <entry key="py" value="4988" />
+          <entry key="py" value="5997" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="14" />
-          <entry key="Python" value="4988" />
+          <entry key="Python" value="5997" />
         </counts>
       </usages-collector>
     </session>
@@ -64,7 +65,7 @@
         <entry file="file://$PROJECT_DIR$/auxilliary_functions.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="434">
-              <caret line="54" column="47" selection-start-line="54" selection-start-column="47" selection-end-line="54" selection-end-column="47" />
+              <caret line="111" column="46" selection-start-line="111" selection-start-column="46" selection-end-line="111" selection-end-column="46" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -76,23 +77,30 @@
         <entry file="file://$PROJECT_DIR$/variables.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
-              <caret line="23" column="20" selection-start-line="23" selection-end-line="23" selection-end-column="20" />
+              <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/fullSimulation.py">
+        <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="304" column="29" selection-start-line="304" selection-start-column="29" selection-end-line="304" selection-end-column="29" />
+            <state relative-caret-position="165">
+              <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
               <folding>
-                <marker date="1535216302127" expanded="true" signature="10913:10923" ph="..." />
-                <marker date="1535216302127" expanded="true" signature="11144:11153" ph="..." />
-                <marker date="1535216302127" expanded="true" signature="13550:13555" ph="..." />
-                <marker date="1535216302127" expanded="true" signature="13977:13983" ph="..." />
-                <marker date="1535216302127" expanded="true" signature="15445:15447" ph="..." />
-                <marker date="1535216302127" expanded="true" signature="16186:16191" ph="..." />
+                <marker date="1535296492051" expanded="true" signature="959:965" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_unused/test1.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -109,11 +117,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>QLineEditWithDrop</find>
-      <find>QLine</find>
-      <find>greenColor</find>
-      <find>display_Text</find>
-      <find>one_third_x</find>
       <find>car</find>
       <find>QLineEditWithInputValue</find>
       <find>draw_input_box</find>
@@ -137,8 +140,13 @@
       <find>macro</find>
       <find>marco</find>
       <find>check_output</find>
-      <find>marc</find>
       <find>is_meshing_complete</find>
+      <find>marc</find>
+      <find>os.syste</find>
+      <find>self.text_good</find>
+      <find>d</find>
+      <find>vis_StatusIndicator_x</find>
+      <find>is_simulation_complete</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -150,13 +158,16 @@
         <option value="$PROJECT_DIR$/CFD/test.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/didntunderstand.py" />
-        <option value="$PROJECT_DIR$/variables.py" />
-        <option value="$PROJECT_DIR$/auxilliary_functions.py" />
         <option value="$PROJECT_DIR$/fullSimulation.py" />
+        <option value="$PROJECT_DIR$/variables.py" />
+        <option value="$PROJECT_DIR$/screenAdjustment.py" />
+        <option value="$PROJECT_DIR$/auxilliary_functions.py" />
+        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/_unused/test1.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="85" />
     <option name="y" value="12" />
     <option name="width" value="1803" />
@@ -173,6 +184,11 @@
             <path>
               <item name="Full-Chain-CFD-PyQt5" type="b2602c69:ProjectViewProjectNode" />
               <item name="Full-Chain-CFD-PyQt5" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Full-Chain-CFD-PyQt5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Full-Chain-CFD-PyQt5" type="462c0819:PsiDirectoryNode" />
+              <item name="_unused" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -196,7 +212,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.fullSimulation">
+  <component name="RunManager" selected="Python.test1">
     <configuration name="fullSimulation" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Full-Chain-CFD-PyQt5" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -210,6 +226,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/fullSimulation.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Full-Chain-CFD-PyQt5" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -260,13 +297,38 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Full-Chain-CFD-PyQt5" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/_unused" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/_unused/test1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.fullSimulation" />
       <item itemvalue="Python.test" />
       <item itemvalue="Python.test (1)" />
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.test1" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test1" />
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.fullSimulation" />
         <item itemvalue="Python.test (1)" />
         <item itemvalue="Python.test" />
@@ -303,7 +365,7 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3298077" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.18653846" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.022115385" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -354,34 +416,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/fullSimulation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="276" column="79" selection-start-line="276" selection-start-column="79" selection-end-line="276" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/variables.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
-          <caret line="23" column="20" selection-start-line="23" selection-end-line="23" selection-end-column="20" />
+          <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screenAdjustment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="69" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="69" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/auxilliary_functions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="434">
-          <caret line="54" column="47" selection-start-line="54" selection-start-column="47" selection-end-line="54" selection-end-column="47" />
+          <caret line="111" column="46" selection-start-line="111" selection-start-column="46" selection-end-line="111" selection-end-column="46" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fullSimulation.py">
+    <entry file="file://$PROJECT_DIR$/_unused/test1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="304" column="29" selection-start-line="304" selection-start-column="29" selection-end-line="304" selection-end-column="29" />
+        <state relative-caret-position="390">
+          <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
           <folding>
-            <marker date="1535216302127" expanded="true" signature="10913:10923" ph="..." />
-            <marker date="1535216302127" expanded="true" signature="11144:11153" ph="..." />
-            <marker date="1535216302127" expanded="true" signature="13550:13555" ph="..." />
-            <marker date="1535216302127" expanded="true" signature="13977:13983" ph="..." />
-            <marker date="1535216302127" expanded="true" signature="15445:15447" ph="..." />
-            <marker date="1535216302127" expanded="true" signature="16186:16191" ph="..." />
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+          <folding>
+            <marker date="1535296492051" expanded="true" signature="959:965" ph="..." />
           </folding>
         </state>
       </provider>

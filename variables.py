@@ -26,6 +26,7 @@ simulationMacro = simulation_directory+'FOmacro.py'
 projectName = "mySimulation"
 meshName = "mesh.hex"
 simulationBat = simulation_directory+projectName+'/'+projectName+'_computation_1/'+projectName+'_computation_1.batch'
+simulationCFView = simulation_directory+projectName+'/'+projectName+'_computation_1/'+projectName+'_computation_1.cfv'
 
 
 
